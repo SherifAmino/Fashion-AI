@@ -129,7 +129,7 @@
       </div>
 
       <!-- Garment grid -->
-      <div class="garment-select-grid" style="flex:1;overflow-y:auto;">
+      <div class="garment-select-grid" id="garment-grid" style="flex:1;overflow-y:auto;">
         <div class="garment-option selected" onclick="selectGarment(this)">
           <img src="https://placehold.co/96x128/d1d0cb/6e6353?text=" alt=""/>
           <div><div class="garment-name">Linen Blazer</div><div class="garment-price">EGP 2,490</div></div>
@@ -164,7 +164,7 @@
         </div>
       </div>
 
-      <button class="btn btn-primary btn-full" style="margin-top:20px;justify-content:center;font-size:13px;padding:18px;" id="generate-btn" onclick="startGeneration()">
+      <button class="btn btn-primary btn-full" style="margin-top:20px;justify-content:center;font-size:13px;padding:18px;" id="process-btn" onclick="TryOnModule.processTryOn()">
         Generate Try-On
         <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </button>
@@ -280,5 +280,7 @@ function share() {
   navigator.clipboard.writeText(location.href + '?shared=1').then(() => alert('Shareable link copied! Valid for 7 days.'));
 }
 </script>
+<script src="api.js"></script>
+<script src="ai-tryon.js"></script>
 </body>
 </html>

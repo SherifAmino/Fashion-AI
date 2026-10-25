@@ -1,0 +1,30 @@
+# FashionAI VITON-HD API Server Requirements
+# Install with: pip install -r requirements.txt
+
+# Core dependencies
+flask==2.3.3
+flask-cors==4.0.0
+
+# PyTorch (install cuda or cpu version as needed)
+torch>=2.0.0
+torchvision>=0.15.0
+torchaudio>=2.0.0
+
+# Image processing
+Pillow==10.0.0
+opencv-python==4.8.0.74
+numpy==1.24.3
+
+# Additional ML dependencies
+torchgeometry==0.1.2
+scikit-image==0.21.0
+scipy==1.11.2
+
+# Optional: for better performance
+tensorboard==2.14.0
+
+# Note: Depending on your system and CUDA availability:
+# For GPU support:
+#   pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+# For CPU only:
+#   pip install torch torchvision torchaudio

@@ -4,6 +4,8 @@
     "backend": "node backend/server.js",
     "frontend": "node serve.mjs",
     "dev": "node backend/server.js & node serve.mjs",
+    "ai-server": "python ai_module/api_server.py",
+    "dev:full": "concurrently \"npm run ai-server\" \"npm run dev\"",
     "test": "vitest run",
     "test:watch": "vitest"
   },
@@ -12,7 +14,9 @@
     "better-sqlite3": "^12.9.0",
     "cors": "^2.8.6",
     "express": "^5.2.1",
+    "form-data": "^4.0.0",
     "jsonwebtoken": "^9.0.3",
+    "node-fetch": "^3.3.0",
     "puppeteer": "^24.42.0"
   },
   "devDependencies": {

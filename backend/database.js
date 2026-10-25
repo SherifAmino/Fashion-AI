@@ -124,6 +124,19 @@ db.exec(`
     expires_at   TEXT,
     is_active    INTEGER NOT NULL DEFAULT 1
   );
+
+  CREATE TABLE IF NOT EXISTS try_ons (
+    id              INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id         INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+    garment_id      INTEGER NOT NULL REFERENCES products(id) ON DELETE CASCADE,
+    person_image    TEXT    NOT NULL,
+    result_image    TEXT    NOT NULL,
+    processing_time INTEGER,
+    created_at      TEXT    NOT NULL DEFAULT (datetime('now'))
+  );
+
+  CREATE INDEX IF NOT EXISTS idx_tryons_user_id ON try_ons(user_id);
+  CREATE INDEX IF NOT EXISTS idx_tryons_created_at ON try_ons(created_at);
 `);
 
 /* ─── Seed ───────────────────────────────────────────────────── */

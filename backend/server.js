@@ -7,6 +7,7 @@ import cartRoutes     from './routes/cart.js';
 import orderRoutes    from './routes/orders.js';
 import wishlistRoutes from './routes/wishlist.js';
 import adminRoutes    from './routes/admin.js';
+import aiRoutes       from './routes/ai.js';
 
 const app  = express();
 const PORT = process.env.PORT || 3001;
@@ -22,6 +23,7 @@ app.use('/api/cart',     cartRoutes);
 app.use('/api/orders',   orderRoutes);
 app.use('/api/wishlist', wishlistRoutes);
 app.use('/api/admin',    adminRoutes);
+app.use('/api/ai',       aiRoutes);
 
 /* ─── Root & Health ──────────────────────────────────────────── */
 app.get('/', (req, res) => {
